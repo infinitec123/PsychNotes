@@ -12,11 +12,12 @@ import com.jpardogo.android.googleprogressbar.library.GoogleProgressBar;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import infinite.loop.psychnotes.R;
+import infinite.loop.psychnotes.common.PsychActivity;
 import infinite.loop.psychnotes.common.model.PsychNote;
 import infinite.loop.psychnotes.common.mvp.MainCardsPresenter;
 import infinite.loop.psychnotes.common.mvp.MainCardsView;
 
-public class MainActivity extends AppCompatActivity implements MainCardsView {
+public class MainActivity extends PsychActivity implements MainCardsView {
 
 
     @Bind(R.id.id_cards)

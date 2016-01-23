@@ -2,6 +2,7 @@ package infinite.loop.psychnotes.common.model;
 
 
 import com.andtinder.model.CardModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class PsychNote extends CardModel {
     public Long id;
@@ -11,6 +12,7 @@ public class PsychNote extends CardModel {
     public String brief;
     public String description;
     public String more;
+
 
     public PsychNote() {
         this.id = id;
@@ -88,5 +90,9 @@ public class PsychNote extends CardModel {
 
     public void setMore(String more) {
         this.more = more;
+    }
+
+    public String getDescriptionHTML() {
+        return this.description.replace("***", "<br>");
     }
 }

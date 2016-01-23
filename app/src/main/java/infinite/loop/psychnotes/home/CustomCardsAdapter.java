@@ -2,6 +2,7 @@ package infinite.loop.psychnotes.home;
 
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +64,7 @@ public final class CustomCardsAdapter extends BaseCardStackAdapter {
 
         ((TextView) convertView.findViewById(R.id.id_brief)).setText(note.getBrief());
         ((TextView) convertView.findViewById(R.id.id_title)).setText(note.getTitle());
-        ((TextView) convertView.findViewById(R.id.id_description)).setText(note.getDescription());
+        ((TextView) convertView.findViewById(R.id.id_description)).setText(Html.fromHtml(note.getDescriptionHTML()));
 
         return convertView;
     }

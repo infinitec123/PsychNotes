@@ -49,13 +49,17 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile project(":AndTinder")
+    compile project(":Calligraphy")
+
+
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.+'
     compile 'com.android.support:support-v4:+'
     compile 'com.android.support:cardview-v7:23.1.0'
     compile 'com.android.support:design:23.+'
     //compile 'com.github.kikoso:SwipeableCards:1.1-RELEASE@aar'
-    compile project(":AndTinder")
     compile 'com.firebase:firebase-client-android:2.5.0+'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.jpardogo.googleprogressbar:library:1.2.0'
