@@ -2,9 +2,13 @@ package infinite.loop.psychnotes.home;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.andtinder.view.CardContainer;
 import com.jpardogo.android.googleprogressbar.library.GoogleProgressBar;
@@ -60,6 +64,34 @@ public class MainActivity extends PsychActivity implements MainCardsView {
         mCardContainer.setAdapter(mCustomCardsAdapter);
     }
 
+    //*********************************************************************
+    // Menu related
+    //*********************************************************************
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        /**
+         * TODO: Commented for Alpha Release
+         */
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.action_restart:
+                mCustomCardsAdapter.clearCards();
+                mMainCardsPresenter.setView(this);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     //*********************************************************************
     // Interface implementations
@@ -73,11 +105,13 @@ public class MainActivity extends PsychActivity implements MainCardsView {
 
     @Override
     public void showLoading() {
+        mCardContainer.setVisibility(View.GONE);
         mProgressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
+        mCardContainer.setVisibility(View.VISIBLE);
         mProgressBar.setVisibility(View.GONE);
     }
 

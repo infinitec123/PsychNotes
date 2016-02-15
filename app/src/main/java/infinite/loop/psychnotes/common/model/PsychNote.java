@@ -3,7 +3,9 @@ package infinite.loop.psychnotes.common.model;
 
 import com.andtinder.model.CardModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PsychNote extends CardModel {
     public Long id;
     public String title;

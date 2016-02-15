@@ -73,4 +73,9 @@ public final class CustomCardsAdapter extends BaseCardStackAdapter {
         mNotes.add(note);
         notifyDataSetChanged();
     }
+
+    public void clearCards() {
+        mNotes.clear();
+        //notifyDataSetChanged();
+    }
 }
